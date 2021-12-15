@@ -54,6 +54,9 @@ grep [option] filename
 ●　-C → 多顯示匹配行的前後幾行
 
 
+＃＃＃　grep + 正規表達法●開頭結尾○a開頭 → ls | grep
+
+
 
 
 
