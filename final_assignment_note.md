@@ -39,4 +39,22 @@
 > EX：(sym) → sympathy、symbol、assym等
 > 6. []【中括號】__任意比對字串內的每個項目。
 > EX：product[DEFG] → productD、productE、productF、productG
+# grep 語法
+## 可從資料或檔案中，使用關鍵字或正規表達法(Regex)找出想要的內容
+grep [option] filename
+# grep 參數
+●　-i → 忽略大小寫
+●　-n → 顯示匹配行及行號
+●　-r → 遞歸顯示目錄
+●　-c → 只輸出匹配行的計數
+●　-v → 只列出不符合的內容
+●　--color　=　never|always|auto → 顏色標示
+●　-A → 多顯示匹配行的後幾行
+●　-B → 多顯示匹配行的前幾行
+●　-C → 多顯示匹配行的前後幾行
+
+
+
+
+
 
