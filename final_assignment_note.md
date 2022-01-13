@@ -52,9 +52,25 @@ grep [option] filename
 ●　-A → 多顯示匹配行的後幾行
 ●　-B → 多顯示匹配行的前幾行
 ●　-C → 多顯示匹配行的前後幾行
-
-
-＃＃＃　grep + 正規表達法●開頭結尾○a開頭 → ls | grep
+# Linux4
+## grep / awk 講解與實作
+## awk 
+常用在對文字和資料進行分析處理 | 檔案逐行的讀入 | 以空格為預設分隔符號
+## awk Script
+awk 'BEGIN{ print "start" } pattern{ commands } END{ print "end" }' filename
+工作原理: ○ 第一步執行BEGIN 語句 | ○ 第二步從檔案或標準輸入讀取一行，然後再執行pattern語句，逐行掃描檔案到檔案全部被讀取 | ○第三步執行END語句awk 'BEGIN{ print "start" } pattern{ commands } END{ print "end" }' filename
+## awk 語法
+awk  [options]  ‘scripts’  var=value  filename
+## awk print record & field
+awk '{print $1, $2, $4}' fruit.txt
+## awk 參數
+>1. $0  當前record(列、橫行)
+>2. $1~$n  當前record的第N個欄位
+>3. FS  輸入field直欄分隔符（-F相同作用）預設空格
+>4. RS  輸入record(列、橫行)分割符，預設換行符
+>5. NF  欄位個數 | NR  record數，就是行號，預設從1開始
+>6. OFS  輸出欄位分隔符，預設空格
+>7. ORS  輸出resord分割符，預設換行符
 
 
 
