@@ -71,9 +71,50 @@ awk '{print $1, $2, $4}' fruit.txt
 >5. NF  欄位個數 | NR  record數，就是行號，預設從1開始
 >6. OFS  輸出欄位分隔符，預設空格
 >7. ORS  輸出resord分割符，預設換行符
-
-
-
+## awk 算術運算子
+awk '$2 + $3 >= 160 {print $0}' filename
+## awk 關係運算子
+awk '{if ($3 == 120) print $0}’ filename
+## awk 邏輯運算子
+awk '($2 > 6) && ($3 >= 150) {print $0}’ filename
+## awk 正則運算子
+awk '{if ($3 ~ /0/) print $0}’ filename
+## awk 賦值運算子
+Example : awk '{for (j=1; j <= NF; j++) { print $j }}' filename
+# Git1
+## sed 文字分析工具
+●「stream editor 」的縮寫，顧名思義是進行串流(stream) 的編輯 | ●字串取代、複製、刪除的功能 | ●自動化的修改文字檔
+## Sed指令
+sed [option] “[n1,n2] [command] / [pattern] / [replacement] / [flag]” file.txt
+## Sed語法-常用選項
+sed [-nefi] “[n1,n2] [command] / [pattern] / [replacement] / [flag]” file.txt
+## Sed語法-常用指令
+sed [-nefi] “[n1,n2] [command] / [pattern] / [replacement] / [flag]” file.txt
+## Sed語法-常用旗幟
+sed [-nefi] “[n1,n2] [command] / [pattern] / [replacement] / [flag]” file.txt
+## Sed應用-- s搜尋並取代
+sed -e ‘s/a/A/1’ apple.txt | sed ‘s/a/A/g’ apple.txt
+## Sed應用 -- -n沉默模式+p 只印出受影響的行
+sed -n ‘s/a/A/p’ apple.txt | sed -n ‘s/a/A/p’ apple.txt > apple_output.txt
+## Sed應用-- -f 讀取檔案手稿
+sed -f apple_command.txt apple.txt
+## Sed應用-- a新增, c取代, d刪除
+sed '1a apple apple apple' apple.txt | sed -i '2,3c hahaha' apple.txt | sed 1,5d apple.txt
+## Sed應用-- s搜尋並取代+正規表達法
+sed 's/.e/E/g' apple.txt
+## Sed應用-- s搜尋並取代(多個)&存檔
+sed 's/pen/pencil/; s/have/had/' apple.txt | sed 's/pen/pencil/; s/have/had/' apple.txt > apple_output.txt
+# Grep, Awk, Sed 比較
+## ● grep：文字搜尋工具
+○ 可用正規表達法，找出匹配的內容
+## ● sed ：是一種線上編輯器
+○ 它一次處理一行內容，可搭配正規表達法○主要用來自動編輯一個或多個檔案，簡化對檔案的反覆操作○用於行間的內容操作,如增刪改,查詢替換
+## ● awk：文字分析工具
+○ 逐行的讀入，可搭配正規表達法○主要用在對文字和資料進行分析處理，以空格為預設分隔符號○同時也是程式語言○用於處理有欄位規則的行內內容,並支援格式化輸出
+## Git 連結帳號至 Github
+> 1. $ git config --global user.name “Your Name”
+> 2. $ git config --global user.email “your@gmail.com”21
+# Thanks for your watching!
 
 
 
